@@ -1,12 +1,12 @@
 //RETURN FIRST ITEM IN AN ARRAY
-const head = function (bo) {
-  let tea = bo[0];
-  return tea;
+const head = function (arg1) {
+  let output = arg1[0];
+  return output;
 };
 
 
 //FUNCTION IMPLEMENTATION
-const asserEquall = function(actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -15,5 +15,5 @@ const asserEquall = function(actual, expected) {
 };
 
 // TEST CODE
-asserEquall(head([5,6,7]), 5);
-asserEquall(head(["Hello", "Lighthouse", "Labs"]), "Hello");
+assertEqual(head([5,6,7]), 5);
+assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
