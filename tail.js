@@ -1,6 +1,6 @@
 //RETURN TAIL OF AN ARRAY
-const tail = function (arg1) {
-  let output = arg1.slice(1);
+const tail = function(arg1) {
+  arg1.slice(1);
 };
 
 
@@ -14,7 +14,7 @@ const assertEqual = function(actual, expected) {
 };
 
 // TEST CODE
-// Test Case: Check the original array 
+// Test Case: Check the original array
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words); // no need to capture the return value since we are not checking it
 assertEqual(words.length, 3); // original array should still have 3 elements!

@@ -1,5 +1,5 @@
 //RETURN FIRST ITEM IN AN ARRAY
-const head = function (arg1) {
+const head = function(arg1) {
   let output = arg1[0];
   return output;
 };
