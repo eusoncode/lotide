@@ -1,9 +1,7 @@
 //RETURN FIRST ITEM IN AN ARRAY
 const head = function(arg1) {
-  let output = arg1[0];
-  return output;
+  return arg1[0];
 };
-
 
 //FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
