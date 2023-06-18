@@ -1,3 +1,4 @@
+//Define the function to determine the middle number
 const middle = function (array) {
   let middleItem = [];
   if (array.length > 3) {
