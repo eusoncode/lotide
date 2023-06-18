@@ -1,4 +1,4 @@
-function findKeyByValue(obj, val) {
+const findKeyByValue = function (obj, val) {
   for (let key in obj) {
     if (obj.hasOwnProperty(key) && obj[key] === val) {
       return key;

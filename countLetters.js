@@ -1,8 +1,8 @@
 const input = process.argv.slice(2);
-newSen = input.toString().toLowerCase();
-console.log(newSen);
+const newSen = input.toString().toLowerCase();
+// console.log(newSen);
 
-function countLetter(arg1) {
+const countLetter = function(arg1) {
   const newSen2 = {};
 
   for (let i = 0; i < arg1.length; i++) {
@@ -13,7 +13,7 @@ function countLetter(arg1) {
         newSen2[arg1[i]] = 1;
       }
     }
-  };
+  }
   
   return newSen2;
 };
