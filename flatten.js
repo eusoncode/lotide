@@ -1,3 +1,4 @@
+//Define the function to determin the flatten
 const flatten = function (array) {
   let newArray = [];
 
