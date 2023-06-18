@@ -8,6 +8,10 @@ const without = function (source, itemsToRemove) {
       }    
     }  
   };  
+  // OR
+  // for (let i = 0; i < source.length; i++) {
+  //  filtedArr.push(itemsToRemove.includes(source[i]));
+  // }
     return `This is the filtered array: [${filtedArr}]`;
 };
 
