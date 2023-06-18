@@ -1,15 +1,14 @@
 //Defining the without function
 const without = function (source, itemsToRemove) {
   let filtedArr = [];
-
-for (let i = 0; i < source.length; i++) {
-  for (let j = 0; j < itemsToRemove.length; j++) {
-    if (source[i] === itemsToRemove[j]) {
-      filtedArr = source.filter(element => element !== itemsToRemove[j]);
-    }    
-  }  
-};  
-  return `This is the filtered array: [${filtedArr}]`;
+  for (let i = 0; i < source.length; i++) {
+    for (let j = 0; j < itemsToRemove.length; j++) {
+      if (source[i] === itemsToRemove[j]) {
+        filtedArr = source.filter(element => element !== itemsToRemove[j]);
+      }    
+    }  
+  };  
+    return `This is the filtered array: [${filtedArr}]`;
 };
 
 //Define eqArrays function that takes two arguments 
@@ -43,6 +42,12 @@ const assertArraysEqual = function (actual, expected) {
 }
 
 const words = ["hello", "world", "lighthouse"];
-console.log(without(words, ["lighthouse"])); // no need to capture return value for this test case
+without(words, ["lighthouse"]); // no need to capture return value for this test case
 // Make sure the original array was not altered by the without function
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+
+assertArraysEqual(without([1, 2, 3], [3]), [1, 2, 3]) // => Same arrays
+assertArraysEqual(without([1, 2, 3], [1]), [3, 2, 1]) // => Not same arrays
+
+assertArraysEqual(without(["1", "2", "3"], ["3"]), ["1", "2", "3"]) // => Same arrays
+assertArraysEqual(without(["1", "2", "3"], ["2"]), ["1", "2", 3]) // => Not same arrays
