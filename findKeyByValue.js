@@ -1,15 +1,23 @@
+///TESTING CODE
+const assertEqual = function(actual, expected) {
+  (actual === expected) ?  console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) : console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
+};
+
 const findKeyByValue = function(obj, val) {
   for (let key in obj) {
     if (key in obj && obj[key] !== undefined && obj[key] === val) {
       return key;
     }
   }
-  return null; // Return null if no key is found
+  return undefined;
 };
 
-// Example usage
-const obj = { name: "Eustace", age: 30, city: "New York" };
-const valueToFind = "Eustace";
-// const key = findKeyByValue(obj, valueToFind);
+//RUN TEST
+const bestTVShowsByGenre = {
+  sci_fi: "The Expanse",
+  comedy: "Brooklyn Nine-Nine",
+  drama:  "The Wire"
+};
 
-console.log(findKeyByValue(obj, valueToFind));
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
