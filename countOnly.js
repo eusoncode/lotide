@@ -1,37 +1,36 @@
-const input = process.argv.slice(2);
-// console.log(input);
 
-const countOnly = function(arg1) {
-  
-  let newArr1 = [];
-  let integers = [];
-  let floats = [];
-  let negatives = [];
-  let strings = [];
 
-  for (let i = 0; i < arg1.length; i++) {
-    if (!Number.isNaN(Number(arg1[i]))) {
-      if (Number(arg1[i]) >= 1) {
-        integers.push(Number(arg1[i]));
-        // console.log(integers);
-      } else if (Number(arg1[i]) < 0) {
-        floats.push(Number(arg1[i]));
-        // console.log(floats);
-      } else if (Number(arg1[i]) > 0 && Number(arg1[i]) < 1) {
-        negatives.push(Number(arg1[i]));
-        // console.log(negatives);
+const countOnly = function(allItems, itemsToCount) {
+  let results = {};
+
+  for (const item of allItems) {
+    if (itemsToCount[item]) {
+      if (!results[item]) {
+        results[item] = 1;
+      } else {
+        results[item] ++;
       }
-    } else {
-      strings.push(arg1[i]);
-      // console.log(strings);
     }
   }
 
-  newArr1 = [integers, floats, negatives, strings];
+  return results;
+};
 
-  return newArr1;
-
+// //TESTING CODE
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
+  }
 };
 
 
-console.log(countOnly(input));
+const firstNames = ["Karl", "Salima", "Agouhanna", "Fang", "Kavith", "Jason", "Salima", "Fang", "Joe"];
+const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+
+assertEqual(result1["Jason"], 1);
+assertEqual(result1["Karima"], undefined);
+assertEqual(result1["Fang"], 2);
+assertEqual(result1["Agouhanna"], undefined);
+
