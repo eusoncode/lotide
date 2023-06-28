@@ -1,21 +1,23 @@
-const input = process.argv.slice(2);
-const newSen = input.toString().toLowerCase();
-// console.log(newSen);
+///TESTING CODE
+const assertEqual = function(actual, expected) {
+  if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
 
 const countLetter = function(arg1) {
   const newSen2 = {};
 
-  for (let i = 0; i < arg1.length; i++) {
-    if (arg1[i] >= 'a' && arg1[i] <= 'z') {
-      if (newSen2[arg1[i]]) {
-        newSen2[arg1[i]]++;
-      } else {
-        newSen2[arg1[i]] = 1;
-      }
+  for (const letter of arg1) {
+    if (letter >= 'a' && letter <= 'z') {
+      newSen2[letter] ? newSen2[letter]++ : newSen2[letter] = 1;
     }
   }
   
   return newSen2;
 };
 
-console.log(countLetter(newSen));
+const result = countLetter("lighthouse in the house");
+assertEqual(result['l'], 1);
