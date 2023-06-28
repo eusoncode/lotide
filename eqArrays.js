@@ -7,7 +7,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-//Define eqArrays function that takes two arguments
+// Check if two arrays are equal
 const eqArrays = function(arg1, arg2) {
   let newArray1 = [];
   let newArray2 = [];
@@ -27,9 +27,7 @@ const eqArrays = function(arg1, arg2) {
     }
   }
   //check if both arrays match
-  if (newArray1.toString() === newArray2.toString()) {
-    return true;
-  }
+  return newArray1.toString() === newArray2.toString();
 };
 
 eqArrays([1, 2, 3], [1, 2, 3, 1]); // => false
