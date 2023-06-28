@@ -1,10 +1,10 @@
 // Check if two objects are equal
-const eqObjects = function (object1, object2) {
+const eqObjects = function(object1, object2) {
   let newObject1 = Object.keys(object1);
   let newObject2 = Object.keys(object2);
 
   if (newObject1.length === newObject2.length) {
-    for (item of newObject1) {      
+    for (const item of newObject1) {
       if (!Array.isArray(object1[item])) {
         if (object1[item] === object2[item]) {
           return true;
@@ -16,7 +16,7 @@ const eqObjects = function (object1, object2) {
           return true;
         } else {
           return false;
-        }        
+        }
       }
     }
   } else {
@@ -48,7 +48,7 @@ const eqArrays = function(arg1, arg2) {
 };
 
 // Prints assertion message
-const assertObjectsEqual = function (actual, expected) {
+const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;
 
   const printStatement = eqObjects(actual, expected) ? `✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}` : `❌ Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`;
