@@ -21,7 +21,7 @@ const eqArrays = function(arg1, arg2) {
   return newArray1.toString() === newArray2.toString();
 };
 
-//FUNCTION IMPLEMENTATION
+// //FUNCTION IMPLEMENTATION
 const assertEqual = function(actual, expected) {
   (actual === expected) ?  console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) : console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
 };
@@ -30,33 +30,25 @@ const eqObjects = function(object1, object2) {
   let newObject1 = Object.keys(object1);
   let newObject2 = Object.keys(object2);
 
-  let object1Compare = [];
-  let object2Compare = [];
-
-
-  if (newObject1.length !== newObject2.length) {
-    return false;
-  } else {
+  if (newObject1.length === newObject2.length) {
     for (const item of newObject1) {
-      if (!Array.isArray(item)) {
-        if (newObject1[item] !== newObject2[item]) {
-          return false;
+      if (!Array.isArray(object1[item])) {
+        if (object1[item] === object2[item]) {
+          return true;
         } else {
-          object1Compare[item] = newObject1[item];
+          return false;
         }
       } else {
-        for (const item2 of newObject2) {
-          if (item === item2) {
-            eqArrays(item, item2);
-          } else {
-            return false;
-          }
+        if (eqArrays(object1[item], object2[item])) {
+          return true;
+        } else {
+          return false;
         }
       }
     }
+  } else {
+    return false;
   }
-
-  return object1Compare.toString() === object2Compare.toString();
 };
 
 // TEST CODE
