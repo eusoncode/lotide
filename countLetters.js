@@ -1,23 +1,13 @@
-///TESTING CODE
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const countLetters = function(arg) {
+  const newArg = {};
 
-const countLetter = function(arg1) {
-  const newSen2 = {};
-
-  for (const letter of arg1) {
+  for (const letter of arg) {
     if (letter >= 'a' && letter <= 'z') {
-      newSen2[letter] ? newSen2[letter]++ : newSen2[letter] = 1;
+      newArg[letter] ? newArg[letter]++ : newArg[letter] = 1;
     }
   }
   
-  return newSen2;
+  return newArg;
 };
 
-const result = countLetter("lighthouse in the house");
-assertEqual(result['l'], 1);
+module.exports = countLetters;

@@ -37,8 +37,4 @@ const map = function(array, callback) {
   return results;
 };
 
-const words = ["ground", "control", "to", "major", "tom"];
-
-assertArraysEqual(map(words, word => word[0]), ['g', 'c', 't', 'm', 't']); // => Same arrays
-assertArraysEqual(map(words, word => word[0]), ['g', 'c', 't', 'm', 'b']); // => Not Same arrays
-assertArraysEqual(map(words, word => word[0] + '*'), [ 'g*', 'c*', 't*', 'm*', 't*' ]); // => Same arrays
+module.exports = map;
