@@ -10,8 +10,7 @@ const flatten = function(array) {
       newArray = newArray.concat(subArray);
     }
   }
-
-  return newArray.sort();
+  return newArray;
 };
 
 module.exports = flatten;
