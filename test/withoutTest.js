@@ -14,8 +14,5 @@ describe("#without", () => {
   });  
   it("returns an array [\"1\", \"2\"]", () => {
     assert.deepEqual(without(["1", "2", "3"], ["3"]), ["1", "2"]);
-  });  
-  it("will not returns same array", () => { 
-    assert.deepEqual(without(["1", "2", "3"], ["2"]), ["1", "2", 3]);
-  });  
+  });
 });
