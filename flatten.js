@@ -1,4 +1,3 @@
-//Define the function to determin the flatten
 const flatten = function(array) {
   let newArray = [];
 
@@ -6,11 +5,12 @@ const flatten = function(array) {
     if (!Array.isArray(array[i])) {
       newArray.push(array[i]);
     } else {
-      for (let g = 0; g < array[i].length; g++) {
-        newArray.push(array[i][g]);
-      }
+      // recursive call to flatten for nested arrays
+      const subArray = flatten(array[i]);
+      newArray = newArray.concat(subArray);
     }
   }
+
   return newArray.sort();
 };
 
