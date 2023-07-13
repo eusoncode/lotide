@@ -6,7 +6,7 @@ describe("#flatten", () => {
     assert.deepEqual(flatten([1, 2, 3, [4], 5, [6, 7]]), [1, 2, 3, 4, 5, 6, 7]); // => Same arrays
   });
   it("returns the flatten number of the array [1, 4, 3, [7], [5, 6]]", () => {
-    assert.deepEqual(flatten([1, 4, 3, [7], [5, 6]]), [1, 2, 3, 4, 5, 6, 7]); // => Not same arrays
+    assert.deepEqual(flatten([1, 2, 4, 3, [7], [5, 6]]), [1, 2, 3, 4, 5, 6, 7]); // => Not same arrays
   });
 });
 
