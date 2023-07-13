@@ -1,12 +1,13 @@
-//Defining the without function
+// Defining the without function
 const without = function(source, itemsToRemove) {
+  // / If itemsToRemove is empty, return source
+  if (itemsToRemove.length === 0) {
+    return source;
+  }
+
   let filtedArr = [];
-  for (let i = 0; i < source.length; i++) {
-    for (let j = 0; j < itemsToRemove.length; j++) {
-      if (source[i] === itemsToRemove[j]) {
-        filtedArr = source.filter(element => element !== itemsToRemove[j]);
-      }
-    }
+  for (let j = 0; j < itemsToRemove.length; j++) {
+    filtedArr = source.filter(element => element !== itemsToRemove[j]);
   }
   return filtedArr;
 };
