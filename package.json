@@ -1,6 +1,6 @@
 {
   "name": "@eusoncode/lotide",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "lotide library",
   "main": "assertArraysEqual.js",
   "directories": {
